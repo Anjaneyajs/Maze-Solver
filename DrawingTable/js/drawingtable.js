@@ -17,8 +17,8 @@ function buildGrid(cols, rows) {
 $(function() {
 	
 	// Variable Setup
-	var cols = 20,
-	    rows = 20,
+	var cols = 8,
+	    rows = 8,
 	    curColor = "red",
 	    mouseDownState = false,
 	    eraseState = false,
