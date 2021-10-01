@@ -51,12 +51,19 @@
 			// 	'j':3
 			// });
 			// }
+
+			var x = document.getElementById('drawing-table').getElementsByTagName('td');
+			//x[63].style.backgroundColor = "yellow";
 	
 			const db = getDatabase();
 			const reference = ref(db, 'loc/');
 			onValue(reference, (snapshot) => {
 				var i = snapshot.child('i').val();
 				var j = snapshot.child('j').val();
+				//if (i==0 && j==0) {
+					x[i*8+j].style.backgroundColor = "green";
+				//}
+				//else
 				console.log(i);
 				console.log(j);
 			});
