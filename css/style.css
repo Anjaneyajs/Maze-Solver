@@ -13,7 +13,12 @@ h1 { font: bold 70px Helvetica, Arial, Sans-Serif;
 
 #page-wrap > p { margin: 0 0 10px 0; }
 
-#page-wrap { width: 960px; margin: 60px auto; }
+#page-wrap { width: 960px; 
+    margin: 60px auto; 
+align-items: center;
+display: block;
+}
+
 
 #drawing-table { width: 500px; height: 500px; border-collapse: collapse; 
     background: rgba(231, 224, 225, 0.5);
