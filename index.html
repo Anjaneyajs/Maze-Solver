@@ -4,13 +4,12 @@
 	
 	<title>ONTIME MAPPING </title>
 	
-	<link rel='stylesheet' href='css/colorpicker.css' />
 	<link rel='stylesheet' href='css/style.css' />
 	
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
-	<script src='js/colorpicker.js'></script>
+
 	<script src='js/drawingtable.js'></script>
-	<script src='js/alg.js'></script>
+	
 </head>
 
 <body>
@@ -54,6 +53,38 @@
 
 			var x = document.getElementById('drawing-table').getElementsByTagName('td');
 			//x[63].style.backgroundColor = "yellow";
+
+			
+				let cTres, rTres;
+				cTres = false;
+				rTres = false;
+var MATRIX_SIZE = 8;
+				var cD, rD;
+				cD = 4;
+				rD = 4;
+				for (var i = 0; i < MATRIX_SIZE; i++) {
+					cTres = false;
+					//cD = c;
+					for (var j = 0; j < MATRIX_SIZE; j++) {
+
+					x [i*8+j].innerHTML = cD + rD;
+					console.log(cD + rD);
+					if (cTres)
+						cD++;
+					else
+						cD--;
+
+					if (cD == 0)
+						cTres = true;
+					}
+					if (rTres)
+					rD++;
+					else
+					rD--;
+
+					if (rD == 0)
+					rTres = true;
+				}
 	
 			const db = getDatabase();
 			const reference = ref(db, 'loc/');
@@ -62,6 +93,8 @@
 				var j = snapshot.child('j').val();
 				//if (i==0 && j==0) {
 					x[i*8+j].style.backgroundColor = "green";
+					x[i*8+j].innerHTML = "1";
+				
 				//}
 				//else
 				console.log(i);
@@ -75,28 +108,7 @@
 		<h1>MAZE</h1>
 		
 		
-		<div id="controls">
-		
-			
-			<fieldset id="color-selector">
-				<legend>Color Picker</legend>
-				<div class="color red selected" data-color="red"><input type="text"></div>
-				<div class="color green" data-color="green"><input type="text"></div>
-				<div class="color blue" data-color="blue"><input type="text"></div>
-				<div class="color eraser" data-color="eraser"></div>
-				
-			</fieldset>
-			
-			<fieldset id="tracing-wrap">
-				<legend>Potential Gradient Display</legend>
-				<form id="tracing-image-form">
-					<label>Data Collection:</label>
-					<input type="text" id="fileLocation" value="http://css-tricks.com/examples/DrawingTable/images/blinky.png">
-					<input type="submit" id="fileSubmit" value="SHOW">
-				</form>
-				<button id="toggle-tracing-mode">Toggle Tracing Mode Off</button>
-			</fieldset>
-		</div>
+	
 	
 		<div id="table-wrap">
 			<table id="drawing-table">
