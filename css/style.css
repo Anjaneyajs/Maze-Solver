@@ -3,12 +3,23 @@
 body { font: 14px Georgia, serif; }
 
 
-h1 { font: bold 32px Helvetica, Arial, Sans-Serif; letter-spacing: -1px; margin: 0 0 5px 0; }
+h1 { font: bold 70px Helvetica, Arial, Sans-Serif; 
+    letter-spacing: -1px; margin: 0 0 5px 0;
+    color: whitesmoke; 
+    -webkit-text-stroke:5px rgb(241 243 236 / 58%);;
+    -webkit-text-fill-color:#000000eb;
+}
+
+
 #page-wrap > p { margin: 0 0 10px 0; }
 
 #page-wrap { width: 960px; margin: 60px auto; }
 
-#drawing-table { width: 500px; height: 500px; border-collapse: collapse; }
+#drawing-table { width: 500px; height: 500px; border-collapse: collapse; 
+    background: rgba(231, 224, 225, 0.5);
+    text-align: center;
+     font-size: 25px;
+     font-family:Arial, Helvetica, sans-serif;}
 #drawing-table td { border: 1px dotted #ccc; }
 
 #controls { width: 400px; float: right; }
@@ -17,7 +28,5 @@ h1 { font: bold 32px Helvetica, Arial, Sans-Serif; letter-spacing: -1px; margin:
 
 #gridSize { margin: 0 0 10px 0; }
 #clear { float: right; }
-/*body {
-	background-image: url(".");
-	background-color: #cccccc;
-   }
+
+
